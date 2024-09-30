@@ -3,10 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Spotify-Homepage</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </head>
   <body>
-    <h1>prova</h1>
+    <aside class="aside-start bg-color-black">
+      <div class="container-menu">
+        <ul>
+          <li class="d-flex align-center"><ion-icon class="padding-ion-icon font-icon-menu" name="ellipsis-horizontal-sharp"></ion-icon></li>
+          <li class="d-flex align-center"><ion-icon class="padding-ion-icon font-icon-menu" name="home-sharp"></ion-icon>Home</li>
+          <li class="d-flex align-center"><ion-icon class="padding-ion-icon font-icon-menu" name="search-sharp"></ion-icon>Cerca</li>
+          <li class="d-flex align-center"><ion-icon class="padding-ion-icon font-icon-menu" name="albums-sharp"></ion-icon>La tua libreria</li>
+        </ul>
+        <ul>
+          <li class="d-flex">
+            <div class="padding-ion-icon"><ion-icon name="add-sharp"></ion-icon></div>
+            Crea playlist
+          </li>
+          <li class="d-flex">
+            <div class="padding-ion-icon"><ion-icon name="heart-sharp"></ion-icon></div>
+            Brani che ti piacciono
+          </li>
+          <li class="d-flex">
+            <div class="padding-ion-icon"><ion-icon name="bookmark-sharp"></ion-icon></div>
+            I tuoi episodi
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <main></main>
+    <aside class="aside-end bg-color-black"></aside>
   </body>
 </html>
