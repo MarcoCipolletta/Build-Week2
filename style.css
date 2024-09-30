@@ -248,4 +248,27 @@ main::-webkit-scrollbar-thumb {
 }
 .album-cta ion-icon {
   font-size: 32px;
+}
+
+.table-wrap {
+  padding-inline: 20px;
+}
+.table-wrap table {
+  width: 100%;
+  font-size: 13px;
+}
+.table-wrap table td {
+  padding-block: 16px;
+}
+
+.l {
+  text-align: left;
+}
+
+.r {
+  text-align: right;
+}
+
+.c {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

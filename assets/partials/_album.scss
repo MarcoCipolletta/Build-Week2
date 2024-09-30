@@ -109,3 +109,25 @@ main::-webkit-scrollbar {
             font-size: 32px;
         }
     }
+
+    .table-wrap{
+        padding-inline: 20px;
+        table{
+            width: 100%;
+            font-size: 13px;
+
+            td{
+               padding-block: 16px;
+            }
+        }
+    }
+
+    .l{
+        text-align: left;
+    }
+    .r{
+        text-align: right;
+    }
+    .c{
+        text-align: center;
+    }
