@@ -1,10 +1,34 @@
+.select {
+  justify-content: space-between;
+  padding-block: 1em;
+}
+.icon-hero {
+  color: #b3b3b3;
+  font-size: 20px;
+}
+.container-icon-menu {
+  background-color: #0e0e0e;
+  border-radius: 50%;
+  padding: 3px;
+  margin-right: 8px;
+}
+.select select {
+  width: 10em;
+  background-color: black;
+  color: white;
+  border: 0;
+  border-radius: 20px;
+  height: 24px;
+  padding: 3px;
+}
+
 .hero {
   padding: 20px;
   background: linear-gradient(to bottom left, #333232, black 51%);
 }
 .hero img {
-  width: 12em;
-  height: 11em;
+  width: 25em;
+  height: 22em;
   margin-right: 20px;
 }
 .hero-text {

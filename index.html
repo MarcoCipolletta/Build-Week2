@@ -36,22 +36,33 @@
       </div>
     </aside>
     <main>
-      <ion-icon name="chevron-back-circle-outline"></ion-icon>
-      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+      <div class="select d-flex align-center">
+        <div class="d-flex">
+          <div class="container-icon-menu cursor-pointer"><ion-icon class="icon-hero" name="chevron-back-outline"></ion-icon></div>
+          <div class="container-icon-menu cursor-pointer"><ion-icon class="icon-hero" name="chevron-forward-outline"></ion-icon></div>
+        </div>
+        <select name="pets" id="pet-select">
+          <option value="dog">
+            <img src="./assets/imgs/search/image-9.jpg" alt="" />
+            <p>Epicode</p>
+          </option>
+          <option value="cat">Cat</option>
+        </select>
+      </div>
       <div class="hero d-flex">
         <img src="./assets/imgs/search/image-9.jpg" alt="img-hero" />
         <div class="hero-text">
           <div class="d-flex align-center">
             <p>ALBUM</p>
-            <button>NASCONDI ANNUNCI</button>
+            <button class="cursor-pointer">NASCONDI ANNUNCI</button>
           </div>
           <h1>VIOLA (feat.Salmo)</h1>
           <p>Fedez,Salmo</p>
           <p>Ascolta il nuovo singolo di Fedez e Salmo!</p>
           <div class="container-buttons d-flex align-center">
-            <button>Play</button>
-            <button>Salva</button>
-            <p><ion-icon class="icon-button" name="ellipsis-horizontal-outline"></ion-icon></p>
+            <button class="cursor-pointer">Play</button>
+            <button class="cursor-pointer">Salva</button>
+            <p><ion-icon class="icon-button cursor-pointer" name="ellipsis-horizontal-outline"></ion-icon></p>
           </div>
         </div>
       </div>
@@ -84,6 +95,38 @@
           <div class="playlist-card">
             <img src="./assets/imgs/main/image-15.jpg" alt="Playlist Cover" class="playlist-cover" />
             <p class="playlist-name">saggio vibes</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="other-likes-section">
+        <h2 class="section-title">Altro di ciò che ti piace</h2>
+
+        <div class="card-container">
+          <div class="card">
+            <img src="./assets/imgs/main/image-16.jpg" alt="Card Cover" class="card-cover" />
+            <p class="card-title">Italia</p>
+            <p>lorem</p>
+          </div>
+          <div class="card">
+            <img src="./assets/imgs/main/image-17.jpg" alt="Card Cover" class="card-cover" />
+            <p class="card-title">big on the internet</p>
+            <p>lorem</p>
+          </div>
+          <div class="card">
+            <img src="./assets/imgs/main/image-18.jpg" alt="Card Cover" class="card-cover" />
+            <p class="card-title">Pop Rising</p>
+            <p>lorem</p>
+          </div>
+          <div class="card">
+            <img src="./assets/imgs/main/image-19.jpg" alt="Card Cover" class="card-cover" />
+            <p class="card-title">Canzoni Tristi</p>
+            <p>lorem</p>
+          </div>
+          <div class="card">
+            <img src="./assets/imgs/main/image-9.jpg" alt="Card Cover" class="card-cover" />
+            <p class="card-title">In Tendenza</p>
+            <p>lorem</p>
           </div>
         </div>
       </section>
