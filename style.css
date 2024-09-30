@@ -8,6 +8,10 @@ body {
   font-family: "Circular";
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .d-flex {
   display: flex;
 }
@@ -36,9 +40,13 @@ body {
   color: #b3b3b3;
   padding-bottom: 10px;
   list-style: none;
+  margin-top: 13px;
 }
 .aside-start ul + ul {
-  margin-top: 25px;
+  margin-top: 30px;
+}
+.aside-start ul + ul li {
+  margin-top: 13px;
 }
 .aside-start ul + ul li div {
   width: 25px;
@@ -58,4 +66,31 @@ body {
 .aside-start ul + ul li:nth-of-type(3) div {
   background-color: rgb(1, 95, 1);
   color: rgb(5, 185, 5);
+}
+.aside-start ul + ul li:nth-of-type(3) {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(156, 156, 156, 0.2941176471);
+}
+
+.aside-end {
+  padding: 15px;
+  width: 15em;
+}
+.aside-end div:nth-child(1) {
+  justify-content: space-between;
+}
+.aside-end div:nth-child(1) div {
+  gap: 5px;
+}
+.aside-end div h3 {
+  color: white;
+}
+.aside-end div p {
+  color: #b3b3b3;
+  position: relative;
+  top: 2px;
+}
+
+main {
+  flex-grow: 1;
 }/*# sourceMappingURL=style.css.map */
