@@ -199,6 +199,8 @@ main {
 .container-title-song img + div + span {
   font-size: 18px;
   margin-left: 10px;
+  color: #b3b3b3;
+  cursor: pointer;
 }
 
 .container-play-music {
@@ -222,6 +224,7 @@ main {
 .conteiner-mix div p {
   font-size: 24px;
   cursor: pointer;
+  color: #b3b3b3;
 }
 
 .container-music-bar {
