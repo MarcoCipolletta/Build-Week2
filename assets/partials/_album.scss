@@ -3,6 +3,9 @@ main{
     position: relative;
     overflow-y: auto;
 
+    .select-album{
+        padding: 20px;
+    }
     .nav-album{
         height: 60px;
     }
@@ -140,6 +143,7 @@ main::-webkit-scrollbar {
     }
     .r{
         text-align: right;
+        padding-right: 20%;
     }
     .c{
         text-align: center;

@@ -126,10 +126,11 @@ div:nth-child(2) {
   object-fit: cover;
   margin-right: 10px;
 }
-
-main {
+main{
   flex-grow: 1;
-  margin-inline: 2em;
+}
+.main {
+  padding-inline: 2em;
 }
 
 .profile {

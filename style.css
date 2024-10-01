@@ -141,7 +141,10 @@ div:nth-child(2) {
 
 main {
   flex-grow: 1;
-  margin-inline: 2em;
+}
+
+.main {
+  padding-inline: 2em;
 }
 
 .profile {
@@ -369,6 +372,9 @@ main {
   position: relative;
   overflow-y: auto;
 }
+main .select-album {
+  padding: 20px;
+}
 main .nav-album {
   height: 60px;
 }
@@ -503,6 +509,7 @@ main::-webkit-scrollbar-thumb {
 
 .r {
   text-align: right;
+  padding-right: 20%;
 }
 
 .c {
