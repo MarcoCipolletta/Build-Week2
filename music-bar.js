@@ -31,8 +31,20 @@ regolaVolume.addEventListener("input", function () {
   audio.volume = regolaVolume.value;
 });
 
+console.log(audio.duration);
+
+audio.addEventListener("loadedmetadata", function () {
+  duration.innerText = convertSeconds(audio.duration);
+});
+
 audio.addEventListener("timeupdate", function () {
   let durata = (audio.currentTime / audio.duration) * 100;
   barradurata.value = durata;
-  currentTime.innerText = audio.currentTime;
+  currentTime.innerText = convertSeconds(audio.currentTime);
 });
+
+function convertSeconds(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${minutes} : ${remainingSeconds}`;
+}

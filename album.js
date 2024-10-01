@@ -1,4 +1,7 @@
 let id = new URLSearchParams(location.search).get("id");
+
+let arrayCanzoni = [];
+
 const getInfoAlbum = function (id) {
   let apiAlbum = `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`;
   fetch(apiAlbum)
@@ -35,19 +38,21 @@ const getInfoAlbum = function (id) {
         let newRow = document.createElement("tr");
         newRow.innerHTML = `<td class="c">${i + 1}</td>
                     <td class="l">
-                      <p class="bold text-white">${songArray[i].title}</p>
+                      <p onclick="playMusic(${i})" class="bold text-white cursor-pointer">${songArray[i].title}</p>
                       <p>${songArray[i].artist.name}</p>
                     </td>
                     <td class="r">${songArray[i].rank}</td>
                     <td class="c">${convertSeconds(songArray[i].duration)}</td>`;
         table.appendChild(newRow);
+        arrayCanzoni.push(songArray[i].preview);
       }
     })
     .catch((error) => {
       console.log("errore", error);
     });
 };
-getInfoAlbum(id);
+
+console.log(arrayCanzoni);
 
 function convertSeconds(seconds) {
   const minutes = Math.floor(seconds / 60);
@@ -61,3 +66,17 @@ function convertMinutes(seconds) {
   const remainingMinutes = minutes % 60;
   return `${hours} ora ${remainingMinutes} min`;
 }
+
+let audio = new Audio();
+let isplaying = false;
+
+const playMusic = function (i) {
+  console.log(i);
+
+  audio.src = arrayCanzoni[i];
+
+  isplaying = true;
+  audio.play();
+};
+
+getInfoAlbum(id);
