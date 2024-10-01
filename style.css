@@ -242,6 +242,12 @@ main {
   width: 40vw;
 }
 
+#reset-canzone:hover,
+#canzone-successiva:hover,
+#canzone-precedente:hover {
+  color: #1ed760;
+}
+
 .select {
   justify-content: space-between;
   padding-block: 1em;
