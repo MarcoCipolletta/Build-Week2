@@ -1,4 +1,4 @@
-let cantante = "";
+let cantanti = "";
 
 const getInfoCantante = function (cantanti) {
   let apiCantante = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${cantanti}`;
