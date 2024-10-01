@@ -15,8 +15,9 @@ const getInfoCantante = function (cantanti, index) {
       let img = "";
 
       let albumrandom = Math.floor(Math.random() * cantante.data.length);
+
       titolo = cantante.data[albumrandom].album.title;
-      img = cantante.data[albumrandom].album.cover_xl;
+      img = cantante.data[albumrandom].album.cover_small;
       let id = cantante.data[albumrandom].album.id;
       stampaAlbum(titolo, index, img, id);
     })

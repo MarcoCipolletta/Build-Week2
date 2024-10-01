@@ -77,7 +77,7 @@ body {
 }
 .aside-end {
   padding: 15px;
-  width: 15em;
+  width: 16em;
   & div:nth-child(1) {
     justify-content: space-between;
     div {
@@ -137,6 +137,7 @@ main {
   flex-grow: 1;
 }
 .main {
+  overflow-y: auto;
   padding-inline: 2em;
 }
 
