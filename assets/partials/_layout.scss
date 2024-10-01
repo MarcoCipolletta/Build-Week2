@@ -5,6 +5,7 @@ body {
   height: 100vh;
   display: flex;
   font-family: "Circular";
+  background-color: #171717;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -75,18 +76,16 @@ body {
     div {
       gap: 5px;
     }
-  
-  
-  div p {
-    color: #b3b3b3;
-    position: relative;
-    top: 2px;
-  }
-}
-div h3 {
-  color: white;
-}
 
+    div p {
+      color: #b3b3b3;
+      position: relative;
+      top: 2px;
+    }
+  }
+  div h3 {
+    color: white;
+  }
 }
 .aside-end ul {
   display: flex;
@@ -102,33 +101,57 @@ div h3 {
   font-size: 0.5rem;
   font-weight: 300;
 }
-.friend-info{
+.friend-info {
   flex-grow: 1;
 }
 
-.friend-info>div, .friend-info p {
+.friend-info > div,
+.friend-info p {
   margin-bottom: 5px;
 }
-div:nth-child(2){
+div:nth-child(2) {
   color: #b3b3b3;
   font-size: 0.5rem;
 }
-.icon-aside-end{
+.icon-aside-end {
   font-size: 16px;
   position: relative;
-    top: 4px;
-    right: 4px;
+  top: 4px;
+  right: 4px;
 }
-.avatar{
-  
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
-
 
 main {
   flex-grow: 1;
+  margin-inline: 2em;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.profile img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.profile p {
+  font-size: 12px;
+  color: white;
+}
+.profile .icon-profile {
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
 }
