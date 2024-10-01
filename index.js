@@ -19,6 +19,8 @@ const getInfoCantante = function (cantanti, index) {
       titolo = cantante.data[albumrandom].album.title;
       img = cantante.data[albumrandom].album.cover_small;
       let id = cantante.data[albumrandom].album.id;
+      console.log(id);
+
       stampaAlbum(titolo, index, img, id);
     })
     .catch((error) => {
@@ -33,7 +35,12 @@ const stampaAlbum = function (titolo, index, img, id) {
   playListCard[index].innerHTML = ` 
   <img src=${img} alt="Playlist Cover" class="playlist-cover" />
               <p class="playlist-name">${titolo}</p>`;
+
+  playListCard[index].addEventListener("click", function () {
+    window.location.href = `./album.html?id=${id} `;
+  });
 };
+
 getInfoCantante("eminem", 0);
 
 getInfoCantante("fedez", 1);
