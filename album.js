@@ -26,8 +26,10 @@ const getInfoAlbum = function (id) {
         year.innerText = album.release_date;
         let numTracks = document.getElementById('numTracks');
         numTracks.innerText = album.nb_tracks;
+        let albumDur = album.duration;
+        let s = convertMinutes(albumDur);
         let totDuration = document.getElementById('totDuration');
-        totDuration.innerText = album.duration;     
+        totDuration.innerText = s;     
 
         for (let i = 0; i < songArray.length; i++){
             let newRow = document.createElement('tr');
@@ -37,7 +39,7 @@ const getInfoAlbum = function (id) {
                       <p>${songArray[i].artist.name}</p>
                     </td>
                     <td class="r">${songArray[i].rank}</td>
-                    <td class="c">${songArray[i].duration}</td>`
+                    <td class="c">${convertSeconds(songArray[i].duration)}</td>`
            table.appendChild(newRow);
         }
 
@@ -48,3 +50,18 @@ const getInfoAlbum = function (id) {
       });
   };
   getInfoAlbum("75621062");
+
+  function convertSeconds(seconds) {
+    const minutes = Math.floor(seconds / 60); 
+    const remainingSeconds = seconds % 60; 
+    return `${minutes} : ${remainingSeconds}`;
+}
+
+function convertMinutes(seconds) {
+    const minutes = Math.floor(seconds / 60); 
+    const hours = Math.floor(minutes/ 60);
+    const remainingMinutes = minutes % 60;
+    return `${hours} ora ${remainingMinutes} min`;
+}
+
+

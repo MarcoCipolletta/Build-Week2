@@ -463,12 +463,12 @@ main .song-container {
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
   color: white;
+  padding-bottom: 100px;
 }
 main .album-info-wrap {
   display: flex;
   align-items: flex-end;
   padding-block: 16px;
-  flex-wrap: wrap;
   row-gap: 20px;
 }
 main .album-info-wrap img {
@@ -491,7 +491,7 @@ main .album-info-wrap .album-info img {
   margin-right: 8px;
 }
 main .album-info-wrap .album-info h1 {
-  font-size: 4rem;
+  font-size: clamp(20px, 3vw, 3rem);
   color: white;
   font-weight: 800;
 }
