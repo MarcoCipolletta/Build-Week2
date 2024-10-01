@@ -518,4 +518,102 @@ main::-webkit-scrollbar-thumb {
 
 .text-white {
   color: white;
+}
+
+.hero-artist {
+  height: 300px;
+  background-image: url("./assets/imgs/main/image-12.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.info-artist {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+}
+.info-artist span,
+.info-artist h1,
+.info-artist p {
+  color: #fff;
+}
+.info-artist span {
+  display: flex;
+  align-items: center;
+}
+.info-artist h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.artist-container h3 {
+  border: 1px solid #fff;
+  padding: 5px 13px;
+  font-weight: 900;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.general-container {
+  display: flex;
+  padding: 20px;
+}
+.general-container h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.general-container .textAndImg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-block: 20px;
+}
+.general-container .textAndImg .imgAndIcon {
+  position: relative;
+}
+.general-container .textAndImg .imgAndIcon img {
+  border-radius: 50%;
+}
+.general-container .textAndImg .imgAndIcon ion-icon {
+  position: absolute;
+  bottom: 0;
+  right: 3px;
+  font-size: 13px;
+  background-color: #2abd5e;
+  border-radius: 50%;
+  color: #fff;
+}
+.general-container .textAndImg h4 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+.general-container .popolari {
+  margin-right: 130px;
+}
+.general-container table {
+  margin-block: 20px;
+  width: 100%;
+}
+.general-container table tr {
+  display: flex;
+  align-items: center;
+  margin-block: 10px;
+  font-size: 15px;
+}
+.general-container table .number {
+  font-size: 14px;
+  padding-left: 25px;
+}
+.general-container table .artist-img {
+  padding-inline: 10px;
+}
+.general-container table .song {
+  width: 50%;
+}
+.general-container table .riproduzioni {
+  padding-inline: 80px;
 }/*# sourceMappingURL=style.css.map */
