@@ -5,7 +5,6 @@ main{
 
     .nav-album{
         height: 60px;
-        /* background-color: antiquewhite; */
     }
     .hero-album{
         background: linear-gradient(180deg, #D3B64A, #212121 );
@@ -13,16 +12,17 @@ main{
     }
     .song-container{
         background-color: rgba(0, 0, 0, 0.266);
-        position: absolute;
-        top: 264px;
         height: 700px;
         width: 100%;
         backdrop-filter: blur(40px);
+        color: white;
     }
     .album-info-wrap{
         display: flex;
         align-items: flex-end;
         padding-block: 16px;
+        flex-wrap: wrap;
+        row-gap: 20px;
 
         img{
             width: 170px;
@@ -117,7 +117,20 @@ main::-webkit-scrollbar {
             font-size: 13px;
 
             td{
-               padding-block: 16px;
+               padding-top: 16px;
+               vertical-align: middle;
+            }
+            p{
+                margin-bottom: 6px;
+            }
+            .clock{
+                font-size: 15px;
+            }
+            th{
+                font-weight: 400;
+                padding-bottom: 6px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.121) ;
+                vertical-align: middle;
             }
         }
     }
@@ -130,4 +143,7 @@ main::-webkit-scrollbar {
     }
     .c{
         text-align: center;
+    }
+    .text-white{
+        color: white;
     }
