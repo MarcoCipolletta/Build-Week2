@@ -454,7 +454,7 @@ main .nav-album {
   height: 60px;
 }
 main .hero-album {
-  background: linear-gradient(180deg, #d3b64a, #212121);
+  background: linear-gradient(180deg, #D3B64A, #212121);
   height: 480px;
 }
 main .song-container {
@@ -463,12 +463,12 @@ main .song-container {
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
   color: white;
+  padding-bottom: 100px;
 }
 main .album-info-wrap {
   display: flex;
   align-items: flex-end;
   padding-block: 16px;
-  flex-wrap: wrap;
   row-gap: 20px;
 }
 main .album-info-wrap img {
@@ -491,7 +491,7 @@ main .album-info-wrap .album-info img {
   margin-right: 8px;
 }
 main .album-info-wrap .album-info h1 {
-  font-size: 4rem;
+  font-size: clamp(20px, 3vw, 3rem);
   color: white;
   font-weight: 800;
 }
@@ -500,44 +500,6 @@ main .album-info-wrap .album-info span {
   color: white;
 }
 main .album-info-wrap .album-info p {
-  color: white;
-  padding-bottom: 100px;
-}
-main .album-info-wrap .album-info .album-info-wrap {
-  display: flex;
-  align-items: flex-end;
-  padding-block: 16px;
-  row-gap: 20px;
-}
-main .album-info-wrap .album-info .album-info-wrap img {
-  width: 170px;
-  margin-inline: 20px;
-  box-shadow: 5px 5px 34px 2px rgba(0, 0, 0, 0.58);
-}
-main .album-info-wrap .album-info .album-info-wrap .album-info {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-main .album-info-wrap .album-info .album-info-wrap .album-info img {
-  width: 20px;
-  height: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  margin-left: 0;
-  margin-right: 8px;
-}
-main .album-info-wrap .album-info .album-info-wrap .album-info h1 {
-  font-size: clamp(20px, 3vw, 3rem);
-  color: white;
-  font-weight: 800;
-}
-main .album-info-wrap .album-info .album-info-wrap .album-info span {
-  font-size: 12px;
-  color: white;
-}
-main .album-info-wrap .album-info .album-info-wrap .album-info p {
   color: white;
   display: flex;
   align-items: center;
@@ -580,7 +542,7 @@ main::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1ed760;
+  background-color: #1ED760;
 }
 .album-cta .play-wrap .play {
   color: black;

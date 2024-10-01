@@ -1,59 +1,22 @@
-main {
-  background-color: #212121;
-  position: relative;
-  overflow-y: auto;
+main{
+    background-color: #212121;
+    position: relative;
+    overflow-y: auto;
 
-  .select-album {
-    padding: 20px;
-  }
-  .nav-album {
-    height: 60px;
-  }
-  .hero-album {
-    background: linear-gradient(180deg, #d3b64a, #212121);
-    height: 480px;
-  }
-  .song-container {
-    background-color: rgba(0, 0, 0, 0.266);
-    width: 100%;
-    backdrop-filter: blur(40px);
-    color: white;
-  }
-  .album-info-wrap {
-    display: flex;
-    align-items: flex-end;
-    padding-block: 16px;
-    flex-wrap: wrap;
-    row-gap: 20px;
-
-    img {
-      width: 170px;
-      margin-inline: 20px;
-      -webkit-box-shadow: 5px 5px 34px 2px rgba(0, 0, 0, 0.58);
-      box-shadow: 5px 5px 34px 2px rgba(0, 0, 0, 0.58);
+    .select-album{
+        padding: 20px;
     }
-    .album-info {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      img {
-        width: 20px;
-        height: 20px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-left: 0;
-        margin-right: 8px;
-      }
-      h1 {
-        font-size: 4rem;
-        color: white;
-        font-weight: 800;
-      }
-      span {
-        font-size: 12px;
-        color: white;
-      }
-      p {
+    .nav-album{
+        height: 60px;
+    }
+    .hero-album{
+        background: linear-gradient(180deg, #D3B64A, #212121 );
+        height: 480px;
+    }
+    .song-container{
+        background-color: rgba(0, 0, 0, 0.266);
+        width: 100%;
+        backdrop-filter: blur(40px);
         color: white;
         padding-bottom: 100px;
     }
@@ -100,90 +63,91 @@ main {
         }
 
     }
-  }
 }
+
+.bold{
+    font-weight: 600;
 }
-.bold {
-  font-weight: 600;
-}
-.thin {
-  font-weight: 400;
+.thin{
+    font-weight: 400;
 }
 
 main::-webkit-scrollbar {
-  width: 10px;
-}
-main::-webkit-scrollbar-track {
-  background-color: transparent;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-main::-webkit-scrollbar-thumb {
-  background-color: #ffffff16;
-  border-radius: 10px;
-}
-
-.album-cta {
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-
-  .play-wrap {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1ed760;
-
-    .play {
-      color: black;
-      font-size: 24px;
-      margin-left: 2px;
+    width: 10px;
     }
-  }
-  ion-icon {
-    font-size: 32px;
-  }
-}
+    main::-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    }
+    main::-webkit-scrollbar-thumb {
+    background-color: #ffffff16;
+    border-radius: 10px;
+    }
 
-.table-wrap {
-  padding-inline: 20px;
-  table {
-    width: 100%;
-    font-size: 13px;
+    .album-cta{
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
 
-    td {
-      padding-top: 16px;
-      vertical-align: middle;
-    }
-    p {
-      margin-bottom: 6px;
-    }
-    .clock {
-      font-size: 15px;
-    }
-    th {
-      font-weight: 400;
-      padding-bottom: 6px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.121);
-      vertical-align: middle;
-    }
-  }
-}
+        .play-wrap{
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1ED760;
 
-.l {
-  text-align: left;
-}
-.r {
-  text-align: right;
-  padding-right: 20%;
-}
-.c {
-  text-align: center;
-}
-.text-white {
-  color: white;
-}
+            .play{
+                color: black;
+                font-size: 24px;
+                margin-left: 2px;
+            }
+            
+        }
+        ion-icon{
+            font-size: 32px;
+        }
+    }
+
+    .table-wrap{
+        padding-inline: 20px;
+        table{
+            width: 100%;
+            font-size: 13px;
+
+            td{
+               padding-top: 16px;
+               vertical-align: middle;
+            }
+            p{
+                margin-bottom: 6px;
+            }
+            .clock{
+                font-size: 15px;
+            }
+            th{
+                font-weight: 400;
+                padding-bottom: 6px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.121) ;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .l{
+        text-align: left;
+    }
+    .r{
+        text-align: right;
+        padding-right: 20%;
+    }
+    .c{
+        text-align: center;
+    }
+    .text-white{
+        color: white;
+    }
+    
