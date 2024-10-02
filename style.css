@@ -768,7 +768,7 @@ main::-webkit-scrollbar-thumb {
   align-items: center;
 }
 .info-artist h1 {
-  font-size: 50px;
+  font-size: clamp(20px, 4vw, 4rem);
   font-weight: 800;
   margin-top: 5px;
   margin-bottom: 15px;
