@@ -1,7 +1,20 @@
 let cantanti = "";
 
-const getInfoCantante = function (cantanti, index) {
-  let apiCantante = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${cantanti}`;
+const barMusicinfo = function () {
+  let oggArtistaStorage = JSON.parse(localStorage.getItem("oggArtista"));
+
+  if (oggArtistaStorage) {
+    audio.src = oggArtistaStorage.preview;
+    imgBarMusic.src = oggArtistaStorage.imgAlbum;
+    titoloCanzoneBarMusic.innerText = oggArtistaStorage.titolo;
+    nomeArtistaBarMusic.innerHTML = oggArtistaStorage.nomeArtista;
+  } else {
+    audio.src = "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3";
+  }
+};
+
+const getInfoCantante = function (idAlbum, index) {
+  let apiCantante = ` https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
   fetch(apiCantante)
     .then((response) => {
       if (response.ok) {
@@ -10,15 +23,14 @@ const getInfoCantante = function (cantanti, index) {
         throw new Error("LA RISPOSTA DEL SERVER NON è OK");
       }
     })
-    .then((cantante) => {
+    .then((album) => {
       let titolo = "";
       let img = "";
+      console.log(album);
 
-      let albumrandom = Math.floor(Math.random() * cantante.data.length);
-
-      titolo = cantante.data[albumrandom].album.title;
-      img = cantante.data[albumrandom].album.cover_small;
-      let id = cantante.data[albumrandom].album.id;
+      titolo = album.title;
+      img = album.cover_small;
+      let id = album.id;
       console.log(id);
 
       stampaAlbum(titolo, index, img, id);
@@ -41,21 +53,19 @@ const stampaAlbum = function (titolo, index, img, id) {
   });
 };
 
-getInfoCantante("eminem", 0);
+getInfoCantante("103248", 0); //103248
 
-getInfoCantante("fedez", 1);
+getInfoCantante("15116337", 1); //15116337
 
-getInfoCantante("ladygaga", 2);
+getInfoCantante("1075407", 2); //1075407
 
-getInfoCantante("the weekend", 3);
+getInfoCantante("11375450", 3); //11375450
 
-getInfoCantante("annalisa", 4);
+getInfoCantante("74434962", 4); //74434962
 
-getInfoCantante("gemitaiz", 5);
+getInfoCantante("523909312", 5); //523909312
 
 let buttonPlay = document.querySelector(".play");
-let audio = document.querySelector("audio");
-let isplaying = false;
 
 buttonPlay.addEventListener("click", function () {
   audio.src = "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3";

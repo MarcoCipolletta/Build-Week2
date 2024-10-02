@@ -6,10 +6,25 @@ let regolaVolume = document.getElementById("volume-slider");
 let barradurata = document.getElementById("seek-slider");
 let currentTime = document.getElementById("current-time");
 let duration = document.getElementById("duration");
+let imgBarMusic = document.getElementById("img-bar-music");
+let titoloCanzoneBarMusic = document.getElementById("titolo-canzone-bar-music");
+let nomeArtistaBarMusic = document.getElementById("nome-artista-bar-music");
 
-audio.src = "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3";
+let audio = new Audio();
 
-buttonPausaStart.addEventListener("click", function () {
+let volumeAudio = localStorage.getItem("volume");
+
+if (volumeAudio) {
+  audio.volume = volumeAudio;
+  regolaVolume.value = volumeAudio;
+  updateSliderBackground2(regolaVolume);
+}
+
+let isplaying = false;
+
+barMusicinfo();
+
+const playStop = function () {
   if (isplaying) {
     audio.pause();
     buttonPausaStart.style.color = "#b3b3b3";
@@ -21,6 +36,10 @@ buttonPausaStart.addEventListener("click", function () {
     buttonPausaStart.innerHTML = `<ion-icon name="pause-circle"></ion-icon>`;
     isplaying = true;
   }
+};
+
+buttonPausaStart.addEventListener("click", function () {
+  playStop();
 });
 
 buttonRestart.addEventListener("click", function () {
@@ -29,18 +48,69 @@ buttonRestart.addEventListener("click", function () {
 
 regolaVolume.addEventListener("input", function () {
   audio.volume = regolaVolume.value;
+  localStorage.setItem("volume", regolaVolume.value);
 });
 
+function updateSliderBackground2(slider) {
+  const value = slider.value * 100;
+  slider.style.background = `linear-gradient(to right, #1ed760 ${value}%, #404040 ${value}%)`;
+}
+
+regolaVolume.addEventListener("input", function () {
+  updateSliderBackground2(this);
+});
+
+regolaVolume.addEventListener("mouseenter", function () {
+  updateSliderBackground2(this);
+});
+
+regolaVolume.addEventListener("mousedown", function () {
+  updateSliderBackground2(this);
+});
+
+regolaVolume.addEventListener("mouseup", function () {
+  updateSliderBackground2(this);
+});
+
+regolaVolume.addEventListener("mouseleave", function () {
+  updateSliderBackground2(this);
+});
 console.log(audio.duration);
 
 audio.addEventListener("loadedmetadata", function () {
   duration.innerText = convertSeconds(audio.duration);
 });
 
+function updateSliderBackground(slider) {
+  const value = slider.value;
+  slider.style.background = `linear-gradient(to right, #1ed760 ${value}%, #404040 ${value}%)`;
+}
+
+updateSliderBackground(barradurata);
+
+// Aggiungi gli event listener solo una volta
+barradurata.addEventListener("input", function () {
+  // L'utente sta cercando di cambiare la posizione della canzone, aggiornando manualmente la barra
+  audio.currentTime = (barradurata.value / 100) * audio.duration;
+  updateSliderBackground(barradurata);
+});
+
+barradurata.addEventListener("mouseenter", function () {
+  updateSliderBackground(this);
+});
+
+barradurata.addEventListener("mouseleave", function () {
+  updateSliderBackground(this);
+});
+
+// Evento che aggiorna la barra del progresso durante la riproduzione della canzone
 audio.addEventListener("timeupdate", function () {
-  let durata = (audio.currentTime / audio.duration) * 100;
-  barradurata.value = durata;
+  const durataTotale = (audio.currentTime / audio.duration) * 100;
+  barradurata.value = durataTotale;
   currentTime.innerText = convertSeconds(audio.currentTime);
+
+  // Aggiorna lo sfondo della barra in base al progresso attuale della canzone
+  updateSliderBackground(barradurata);
 });
 
 function convertSeconds(seconds) {

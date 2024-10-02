@@ -16,6 +16,7 @@ const getInfoAlbum = function (id) {
       console.log("info album", album);
       let songArray = album.tracks.data;
       console.log(songArray);
+
       let title = document.getElementById("title");
       title.innerText = album.title;
       let table = document.querySelector("table");
@@ -44,7 +45,7 @@ const getInfoAlbum = function (id) {
                     <td class="r">${songArray[i].rank}</td>
                     <td class="c">${convertSeconds(songArray[i].duration)}</td>`;
         table.appendChild(newRow);
-        arrayCanzoni.push(songArray[i].preview);
+        arrayCanzoni.push(songArray[i]);
       }
     })
     .catch((error) => {
@@ -67,16 +68,37 @@ function convertMinutes(seconds) {
   return `${hours} ora ${remainingMinutes} min`;
 }
 
-let audio = new Audio();
-let isplaying = false;
+const barMusicinfo = function () {
+  let oggArtistaStorage = JSON.parse(localStorage.getItem("oggArtista"));
+
+  if (oggArtistaStorage) {
+    audio.src = oggArtistaStorage.preview;
+    imgBarMusic.src = oggArtistaStorage.imgAlbum;
+    titoloCanzoneBarMusic.innerText = oggArtistaStorage.titolo;
+    nomeArtistaBarMusic.innerHTML = oggArtistaStorage.nomeArtista;
+  } else {
+    audio.src = "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3";
+  }
+};
 
 const playMusic = function (i) {
   console.log(i);
 
-  audio.src = arrayCanzoni[i];
+  // audio.src = arrayCanzoni[i].preview;
 
-  isplaying = true;
-  audio.play();
+  let oggArtista = {
+    titolo: arrayCanzoni[i].title_short,
+    imgAlbum: arrayCanzoni[i].album.cover_small,
+    nomeArtista: arrayCanzoni[i].artist.name,
+    idArtista: arrayCanzoni[i].artist.id,
+    preview: arrayCanzoni[i].preview,
+  };
+
+  localStorage.setItem("oggArtista", JSON.stringify(oggArtista));
+  barMusicinfo();
+
+  isplaying = false;
+  playStop();
 };
 
 getInfoAlbum(id);
