@@ -56,7 +56,7 @@ const getInfoAlbum = function (id) {
       console.log("errore", error);
     });
 };
-getInfoAlbum(id);
+
 let artistName = document.getElementById("artistName");
 artistName.addEventListener("click", function () {
   window.location.href = `./artist.html?id=${id}`;
@@ -96,7 +96,7 @@ const playMusic = function (i) {
     imgAlbum: arrayCanzoni[i].album.cover_small,
     nomeArtista: arrayCanzoni[i].artist.name,
     idArtista: arrayCanzoni[i].artist.id,
-    preview: arrayCanzoni[i].preview
+    preview: arrayCanzoni[i].preview,
   };
 
   localStorage.setItem("oggArtista", JSON.stringify(oggArtista));
@@ -161,7 +161,7 @@ const buildRgb = (imageData) => {
     const rgb = {
       r: imageData[i],
       g: imageData[i + 1],
-      b: imageData[i + 2]
+      b: imageData[i + 2],
     };
     rgbValues.push(rgb);
   }

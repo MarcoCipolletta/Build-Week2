@@ -1,5 +1,20 @@
 let albumId = new URLSearchParams(location.search).get("id");
 let table = document.querySelector("table");
+let arrayOggArtista = [];
+
+const barMusicinfo = function () {
+  let oggArtistaStorage = JSON.parse(localStorage.getItem("oggArtista"));
+
+  if (oggArtistaStorage) {
+    audio.src = oggArtistaStorage.preview;
+    imgBarMusic.src = oggArtistaStorage.imgAlbum;
+    titoloCanzoneBarMusic.innerText = oggArtistaStorage.titolo;
+    nomeArtistaBarMusic.innerHTML = oggArtistaStorage.nomeArtista;
+  } else {
+    audio.src = "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3";
+  }
+};
+
 const getArtistFromAlbum = function (albumId) {
   let apiAlbum = `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`;
 
@@ -67,13 +82,14 @@ const getInfoArtist = function (artistId) {
                     <img src= ${trackList.data[i].album.cover_small} width="35px" />
                     </td>
                     <td class="song">
-                    <p class="bold text-white"> ${trackList.data[i].title}</p>
+                    <p onclick="playMusic(${i})" class="bold text-white"> ${trackList.data[i].title}</p>
                   </td>
                   <td class="riproduzioni">${trackList.data[i].rank}</td>
                                     <td class="durata">${trackList.data[i].duration}</td>
                   `;
 
             table.appendChild(newRow);
+            arrayOggArtista.push(trackList.data[i]);
           }
           let roundedImage = document.querySelector(".roundedImg");
           roundedImage.src = artist.picture_small;
@@ -84,6 +100,24 @@ const getInfoArtist = function (artistId) {
     .catch((error) => {
       console.log("errore", error);
     });
+};
+
+const playMusic = function (i) {
+  // audio.src = arrayCanzoni[i].preview;
+
+  let oggArtista = {
+    titolo: arrayOggArtista[i].title_short,
+    imgAlbum: arrayOggArtista[i].album.cover_small,
+    nomeArtista: arrayOggArtista[i].artist.name,
+    idArtista: arrayOggArtista[i].artist.id,
+    preview: arrayOggArtista[i].preview,
+  };
+
+  localStorage.setItem("oggArtista", JSON.stringify(oggArtista));
+  barMusicinfo();
+
+  isplaying = false;
+  playStop();
 };
 
 getArtistFromAlbum(albumId);

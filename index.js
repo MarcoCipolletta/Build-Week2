@@ -55,9 +55,9 @@ const stampaAlbum = function (titolo, index, img, id) {
 
 getInfoCantante("103248", 0); //103248
 
-getInfoCantante("15116337", 1); //15116337
+getInfoCantante("75621062", 1); //15116337
 
-getInfoCantante("1075407", 2); //1075407
+getInfoCantante("107540", 2); //1075407
 
 getInfoCantante("11375450", 3); //11375450
 
