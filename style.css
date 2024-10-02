@@ -740,7 +740,7 @@ main::-webkit-scrollbar-thumb {
 .hero-artist {
   height: 300px;
   background-image: url("./assets/imgs/main/image-12.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   position: relative;
 }
