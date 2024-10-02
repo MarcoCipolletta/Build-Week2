@@ -89,8 +89,6 @@ const barMusicinfo = function () {
 };
 
 const playMusic = function (i) {
-  console.log(i);
-
   // audio.src = arrayCanzoni[i].preview;
 
   let oggArtista = {
@@ -131,14 +129,14 @@ const buildColor = function (imageHero) {
 
     // Ottieni i dati dell'immagine dal canvas
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    console.log(imageData);
+    // console.log(imageData);
 
     // Converti i dati dell'immagine in un array RGB
     const rgbArray = buildRgb(imageData.data);
-    console.log(rgbArray);
+    // console.log(rgbArray);
 
     const quantColors = quantization(rgbArray, 0);
-    console.log(quantColors);
+    // console.log(quantColors);
 
     // Controllo della lunghezza dell'array
     if (quantColors.length > 12) {

@@ -83,7 +83,6 @@ regolaVolume.addEventListener("mouseup", function () {
 regolaVolume.addEventListener("mouseleave", function () {
   updateSliderBackground2(this);
 });
-console.log(audio.duration);
 
 audio.addEventListener("loadedmetadata", function () {
   duration.innerText = convertSeconds(audio.duration);
@@ -115,7 +114,6 @@ audio.addEventListener("timeupdate", function () {
 
   if (isNaN(durataTotale)) {
     barradurata.value = 0;
-    console.log("siamo dentro l if", durataTotale);
   } else {
     barradurata.value = durataTotale;
     localStorage.setItem("durataCanzone", barradurata.value);
