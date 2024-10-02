@@ -27,14 +27,15 @@
   height: 100%;
   width: 20%;
   object-fit: cover;
-  margin-right: 14px;
   display: block;
   border-radius: 3px;
 }
 
 .playlist-name {
   color: #fff;
-  font-size: clamp(11px, 1vw, 1rem);
+  font-size: clamp(11px, 1vw, 1.1rem);
   font-weight: bold;
   margin: 0;
+  margin-inline: 14px;
+  line-height: 1.2em;
 }

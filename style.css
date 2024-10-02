@@ -231,6 +231,7 @@ main {
 .conteiner-icon-music {
   justify-content: center;
   gap: 15px;
+  margin-bottom: 8px;
 }
 .conteiner-icon-music p {
   font-size: 27px;
@@ -398,10 +399,14 @@ main {
 }
 
 .container-icon-menu {
-  background-color: #0e0e0e;
+  background-color: #141414;
   border-radius: 50%;
-  padding: 3px;
   margin-right: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .select select {
@@ -417,6 +422,7 @@ main {
 .hero {
   padding: 20px;
   background: linear-gradient(to bottom left, #333232, black 51%);
+  display: flex;
 }
 
 .hero img {
@@ -431,16 +437,17 @@ main {
 .hero-text h1 {
   font-size: 60px;
   color: white;
-  margin-bottom: 5px;
+  margin-block: 12px;
+  font-weight: 600;
 }
 .hero-text h1 + p {
   color: white;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 .hero-text h1 + p + p {
   color: white;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .hero-text > div {
@@ -519,16 +526,17 @@ main {
   width: 20%;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-right: 14px;
   display: block;
   border-radius: 3px;
 }
 
 .playlist-name {
   color: #fff;
-  font-size: clamp(11px, 1vw, 1rem);
+  font-size: clamp(11px, 1vw, 1.1rem);
   font-weight: bold;
   margin: 0;
+  margin-inline: 14px;
+  line-height: 1.2em;
 }
 
 .other-likes-section {
@@ -598,6 +606,7 @@ main .song-container {
           backdrop-filter: blur(40px);
   color: white;
   padding-bottom: 100px;
+  min-height: 130%;
 }
 main .album-info-wrap {
   display: flex;
