@@ -71,7 +71,8 @@ const getInfoArtist = function (artistId) {
         })
         .then((trackList) => {
           const heroArtist = document.querySelector(".hero-artist");
-          heroArtist.style.backgroundImage = `url(${artist.picture_big})`;
+          heroArtist.style.backgroundImage = `url(${artist.picture_xl})`;
+          heroArtist.style.backgroundPosition = '0 20%';
           console.log(trackList);
           let title = document.getElementById("artistTitle");
           title.innerText = artist.name;
