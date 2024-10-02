@@ -40,6 +40,8 @@ const getInfoArtist = function (artistId) {
     })
     .then((artist) => {
       console.log("info artista", artist);
+      const heroArtist = document.querySelector(".hero-artist");
+      heroArtist.style.backgroundImage = `url(${artist.picture_big})`;
 
       let title = document.getElementById("artistTitle");
       title.innerText = artist.name;
