@@ -11,12 +11,15 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </head>
   <body class="body-homepage">
-    <div class="d-flex grow">
+    <div class="d-flex grow space-between">
       <aside class="aside-start bg-color-black">
         <div class="container-menu">
           <ul>
             <li class="d-flex align-center cursor-pointer"><ion-icon class="padding-ion-icon font-icon-menu" name="ellipsis-horizontal-sharp"></ion-icon></li>
-            <li class="d-flex align-center cursor-pointer"><ion-icon class="padding-ion-icon font-icon-menu" name="home-sharp"></ion-icon>Home</li>
+            <li class="d-flex align-center cursor-pointer">
+              <a href="/index.html"><ion-icon class="padding-ion-icon font-icon-menu" name="home-sharp"></ion-icon>Home</a>
+            </li>
+
             <li class="d-flex align-center cursor-pointer"><ion-icon class="padding-ion-icon font-icon-menu" name="search-sharp"></ion-icon>Cerca</li>
             <li class="d-flex align-center cursor-pointer"><ion-icon class="padding-ion-icon font-icon-menu" name="albums-sharp"></ion-icon>La tua libreria</li>
           </ul>
@@ -37,7 +40,9 @@
         </div>
       </aside>
 
-      <main>
+      <div class="spinner"></div>
+
+      <main class="d-none main-artist">
         <div class="hero-artist">
           <div class="nav-album">
             <div class="select select-album d-flex align-center">
@@ -79,6 +84,8 @@
             <div class="popolari">
               <h2>Popolari</h2>
               <table></table>
+              <table class="table2 d-none"></table>
+              <p id="altro">VISUALIZZA ALTRO</p>
             </div>
             <div class="brani">
               <h2>Brani che ti piacciono</h2>

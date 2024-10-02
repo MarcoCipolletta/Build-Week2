@@ -5,6 +5,12 @@
   background-position: center;
   position: relative;
 }
+.main-artist {
+  padding-bottom: 100px;
+}
+.widthTD {
+  width: 9%;
+}
 .info-artist {
   position: absolute;
   bottom: 0;
@@ -72,7 +78,7 @@
   }
   table {
     margin-block: 20px;
-    width: 100%;
+    width: 113%;
     tr {
       display: flex;
       align-items: center;
@@ -92,5 +98,15 @@
     .riproduzioni {
       padding-inline: 80px;
     }
+    .durata {
+      text-align: end;
+    }
   }
+}
+#altro {
+  padding-left: 2rem;
+  font-size: 10px;
+  color: #ffffffab;
+  font-weight: bold;
+  cursor: pointer;
 }

@@ -20,8 +20,19 @@ body {
 .grow {
   flex-grow: 1;
 }
+.space-between {
+  justify-content: space-between;
+}
 .align-center {
   align-items: center;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
 }
 
 .padding-ion-icon {
@@ -41,6 +52,10 @@ body {
     padding-bottom: 10px;
     list-style: none;
     margin-top: 13px;
+    a {
+      text-decoration: none;
+      color: #b3b3b3;
+    }
   }
   ul + ul {
     margin-top: 30px;
@@ -316,4 +331,27 @@ main {
 #seek-slider:hover::-moz-range-thumb {
   background: #1ed760;
   opacity: 1;
+}
+
+.spinner {
+  border: 8px solid #1ed760; /* Colore di sfondo del cerchio */
+  border-top: 8px solid transparent; /* Colore verde per il bordo superiore */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 980;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

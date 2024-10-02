@@ -26,8 +26,20 @@ body {
   flex-grow: 1;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .align-center {
   align-items: center;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
 }
 
 .padding-ion-icon {
@@ -51,6 +63,10 @@ body {
   padding-bottom: 10px;
   list-style: none;
   margin-top: 13px;
+}
+.aside-start ul li a {
+  text-decoration: none;
+  color: #b3b3b3;
 }
 .aside-start ul + ul {
   margin-top: 30px;
@@ -347,6 +363,28 @@ main {
   opacity: 1;
 }
 
+.spinner {
+  border: 8px solid #1ed760; /* Colore di sfondo del cerchio */
+  border-top: 8px solid transparent; /* Colore verde per il bordo superiore */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 980;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .select {
   justify-content: space-between;
   padding-block: 1em;
@@ -699,6 +737,14 @@ main::-webkit-scrollbar-thumb {
   position: relative;
 }
 
+.main-artist {
+  padding-bottom: 100px;
+}
+
+.widthTD {
+  width: 9%;
+}
+
 .info-artist {
   position: absolute;
   bottom: 0;
@@ -767,7 +813,7 @@ main::-webkit-scrollbar-thumb {
 }
 .general-container table {
   margin-block: 20px;
-  width: 100%;
+  width: 113%;
 }
 .general-container table tr {
   display: flex;
@@ -787,4 +833,15 @@ main::-webkit-scrollbar-thumb {
 }
 .general-container table .riproduzioni {
   padding-inline: 80px;
+}
+.general-container table .durata {
+  text-align: end;
+}
+
+#altro {
+  padding-left: 2rem;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6705882353);
+  font-weight: bold;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

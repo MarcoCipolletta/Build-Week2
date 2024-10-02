@@ -1,5 +1,9 @@
 let albumId = new URLSearchParams(location.search).get("id");
 let table = document.querySelector("table");
+let table2 = document.querySelector(".table2");
+let main = document.querySelector("main");
+let spinner = document.querySelector(".spinner");
+let buttonAltro = document.getElementById("altro");
 let arrayOggArtista = [];
 
 const barMusicinfo = function () {
@@ -75,26 +79,46 @@ const getInfoArtist = function (artistId) {
           let fanCount = document.getElementById("fanCount");
           fanCount.innerText = ` ${artist.nb_fan} ascoltatori mensili`;
 
-          for (let i = 0; i < trackList.data.length; i++) {
+          for (let i = 0; i < 6; i++) {
             let newRow = document.createElement("tr");
             newRow.innerHTML = `<td class="number">${i + 1}</td>
                     <td class="artist-img">
                     <img src= ${trackList.data[i].album.cover_small} width="35px" />
                     </td>
                     <td class="song">
-                    <p onclick="playMusic(${i})" class="bold text-white"> ${trackList.data[i].title}</p>
+                    <p onclick="playMusic(${i})" class="bold cursor-pointer text-white"> ${trackList.data[i].title}</p>
                   </td>
                   <td class="riproduzioni">${trackList.data[i].rank}</td>
-                                    <td class="durata">${trackList.data[i].duration}</td>
+                                    <td class="durata widthTD">${convertSeconds(trackList.data[i].duration)}</td>
                   `;
 
             table.appendChild(newRow);
+            arrayOggArtista.push(trackList.data[i]);
+          }
+
+          for (let i = 6; i < trackList.data.length; i++) {
+            let newRow = document.createElement("tr");
+            newRow.innerHTML = `<td class="number">${i + 1}</td>
+                    <td class="artist-img">
+                    <img src= ${trackList.data[i].album.cover_small} width="35px" />
+                    </td>
+                    <td class="song">
+                    <p onclick="playMusic(${i})" class="bold cursor-pointer text-white"> ${trackList.data[i].title}</p>
+                  </td>
+                  <td class="riproduzioni">${trackList.data[i].rank}</td>
+                                    <td class="durata widthTD">${convertSeconds(trackList.data[i].duration)}</td>
+                  `;
+
+            table2.appendChild(newRow);
             arrayOggArtista.push(trackList.data[i]);
           }
           let roundedImage = document.querySelector(".roundedImg");
           roundedImage.src = artist.picture_small;
           let infoNameArtist = document.getElementById("info");
           infoNameArtist.innerText = ` Di ${artist.name}`;
+
+          main.classList.add("d-block");
+          spinner.classList.add("d-none");
         });
     })
     .catch((error) => {
@@ -134,3 +158,23 @@ function convertMinutes(seconds) {
   const remainingMinutes = minutes % 60;
   return `${hours} ora ${remainingMinutes} min`;
 }
+
+let tableAperta = false;
+
+buttonAltro.addEventListener("click", function () {
+  if (tableAperta) {
+    table2.classList.remove("d-block");
+
+    table.style.marginBottom = "initial";
+    table2.style.marginTop = "initial";
+    buttonAltro.innerText = "VISUALIZZA ALTRO";
+    tableAperta = false;
+  } else {
+    table2.classList.add("d-block");
+
+    table.style.marginBottom = 0;
+    table2.style.marginTop = "-10px";
+    buttonAltro.innerText = "NASCONDI";
+    tableAperta = true;
+  }
+});
