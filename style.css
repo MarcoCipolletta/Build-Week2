@@ -552,7 +552,6 @@ main .nav-album {
   height: 60px;
 }
 main .hero-album {
-  background: linear-gradient(180deg, #d3b64a, #212121);
   height: 480px;
 }
 main .song-container {

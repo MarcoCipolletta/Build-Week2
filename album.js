@@ -34,6 +34,8 @@ const getInfoAlbum = function (id) {
       let s = convertMinutes(albumDur);
       let totDuration = document.getElementById("totDuration");
       totDuration.innerText = s;
+      let imageHero = album.cover_medium; // Ottieni l'URL dell'immagine
+      document.getElementById("album-image").src = imageHero; // Imposta l'immagine nel DOM
 
       for (let i = 0; i < songArray.length; i++) {
         let newRow = document.createElement("tr");
