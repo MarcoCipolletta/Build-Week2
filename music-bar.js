@@ -22,15 +22,9 @@ if (volumeAudio) {
 
 let canzoneAvviata = localStorage.getItem("durataCanzone");
 
-let isplaying = false;
+let isplaying;
 
 barMusicinfo();
-
-if (canzoneAvviata) {
-  barradurata.value = canzoneAvviata;
-  audio.currentTime = (barradurata.value / 100) * localStorage.getItem("audioDuration");
-}
-updateSliderBackground(barradurata);
 
 const playStop = function () {
   if (isplaying) {
@@ -38,13 +32,35 @@ const playStop = function () {
     buttonPausaStart.style.color = "#b3b3b3";
     buttonPausaStart.innerHTML = `<ion-icon name="play-circle-sharp"></ion-icon>`;
     isplaying = false;
+    localStorage.setItem("isplaying", false);
   } else {
     audio.play();
     buttonPausaStart.style.color = "#1ed760";
     buttonPausaStart.innerHTML = `<ion-icon name="pause-circle"></ion-icon>`;
     isplaying = true;
+    localStorage.setItem("isplaying", true);
   }
 };
+
+if (canzoneAvviata) {
+  barradurata.value = canzoneAvviata;
+  audio.currentTime = (barradurata.value / 100) * localStorage.getItem("audioDuration");
+}
+updateSliderBackground(barradurata);
+
+window.addEventListener("load", function () {
+  if (localStorage.getItem("isplaying") === "true") {
+    audio.play();
+    buttonPausaStart.style.color = "#1ed760";
+    buttonPausaStart.innerHTML = `<ion-icon name="pause-circle"></ion-icon>`;
+    isplaying = true;
+  } else {
+    audio.pause();
+    buttonPausaStart.style.color = "#b3b3b3";
+    buttonPausaStart.innerHTML = `<ion-icon name="play-circle-sharp"></ion-icon>`;
+    isplaying = false;
+  }
+});
 
 buttonPausaStart.addEventListener("click", function () {
   playStop();

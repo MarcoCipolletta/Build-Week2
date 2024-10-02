@@ -67,14 +67,24 @@ getInfoCantante("523909312", 5); //523909312
 
 let buttonPlay = document.querySelector(".play");
 
-buttonPlay.addEventListener("click", function () {
-  audio.src = "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3";
+const playMusicIndex = function () {
+  // audio.src = arrayCanzoni[i].preview;
 
-  if (isplaying) {
-    audio.pause();
-    isplaying = false;
-  } else {
-    audio.play();
-    isplaying = true;
-  }
+  let oggArtista = {
+    titolo: "VIOLA (feat.Salmo)",
+    imgAlbum: "https://e-cdns-images.dzcdn.net/images/cover/ebcd291a552cf494598b7613a878a386/500x500-000000-80-0-0.jpg",
+    nomeArtista: "Fedez",
+    idArtista: "3239781",
+    preview: "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3",
+  };
+
+  localStorage.setItem("oggArtista", JSON.stringify(oggArtista));
+  barMusicinfo();
+
+  isplaying = false;
+  playStop();
+};
+
+buttonPlay.addEventListener("click", function () {
+  playMusicIndex();
 });
