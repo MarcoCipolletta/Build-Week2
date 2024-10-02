@@ -52,8 +52,11 @@ const getInfoAlbum = function (id) {
       console.log("errore", error);
     });
 };
-
-console.log(arrayCanzoni);
+getInfoAlbum(id);
+let artistName = document.getElementById("artistName");
+artistName.addEventListener("click", function () {
+  window.location.href = `./artist.html?id=${id}`;
+});
 
 function convertSeconds(seconds) {
   const minutes = Math.floor(seconds / 60);

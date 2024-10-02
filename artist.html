@@ -53,11 +53,16 @@
           </div>
           <div class="info-artist">
             <span>
-              <img src="https://www.genzhiphop.com/wp-content/uploads/2021/09/Legitly-Verified-Blue-Badge-top-page.png" alt="verified" width="15px" />
+              <img
+                id="artistImage"
+                src="https://www.genzhiphop.com/wp-content/uploads/2021/09/Legitly-Verified-Blue-Badge-top-page.png"
+                alt="verified"
+                width="15px"
+              />
               Artista verificato
             </span>
-            <h1>Yellow Band</h1>
-            <p>3.3000.443 ascoltatori mensili</p>
+            <h1 id="artistTitle"></h1>
+            <p id="fanCount">3.3000.443 ascoltatori mensili</p>
           </div>
         </div>
 
@@ -73,41 +78,18 @@
           <div class="general-container">
             <div class="popolari">
               <h2>Popolari</h2>
-              <table>
-                <tr>
-                  <td class="number">1</td>
-                  <td class="artist-img">
-                    <img src="./assets/imgs/main/image-16.jpg" alt="artist" width="35px" />
-                  </td>
-                  <td class="song">
-                    <p class="bold text-white">Montanelli - Intro</p>
-                  </td>
-                  <td class="riproduzioni">694.567</td>
-                  <td class="durata">1:28</td>
-                </tr>
-                <tr>
-                  <td class="number">2</td>
-                  <td class="artist-img">
-                    <img src="./assets/imgs/main/image-16.jpg" alt="artist" width="35px" />
-                  </td>
-                  <td class="song">
-                    <p class="bold text-white">Montanelli album ntro- Intro</p>
-                  </td>
-                  <td class="riproduzioni">694.567.93583</td>
-                  <td class="durata">1:28</td>
-                </tr>
-              </table>
+              <table></table>
             </div>
             <div class="brani">
               <h2>Brani che ti piacciono</h2>
               <div class="textAndImg">
                 <div class="imgAndIcon">
-                  <img src="./assets/imgs/main/image-12.jpg" alt="artist" width="50px" />
+                  <img class="roundedImg" src="./assets/imgs/main/image-12.jpg" alt="artist" width="50px" />
                   <ion-icon name="heart"></ion-icon>
                 </div>
                 <div class="brani-info">
                   <h4>Hai messo mi piace</h4>
-                  <p>Di Yellowcard</p>
+                  <p id="info">Di Yellowcard</p>
                 </div>
               </div>
             </div>
@@ -199,5 +181,6 @@
     </div>
     <audio src=""></audio>
     <script src="./music-bar.js"></script>
+    <script src="./assets/artist.js"></script>
   </body>
 </html>
