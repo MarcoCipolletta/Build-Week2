@@ -11,8 +11,7 @@
   .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 33px;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .card {
@@ -29,7 +28,7 @@
       width: 100%;
       height: auto;
       border-radius: 5px;
-      margin-bottom: 15px / 2;
+      margin-bottom: calc(15px / 2);
     }
 
     .card-title {

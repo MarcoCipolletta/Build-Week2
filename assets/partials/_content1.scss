@@ -20,23 +20,21 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  height: 100%;
-  flex: 1 1 30%;
+  flex: 1 1 calc(33.333% - 20px);
 }
 
 .playlist-cover {
   height: 100%;
   width: 20%;
   object-fit: cover;
-  margin-right: 10px;
+  margin-right: 14px;
   display: block;
   border-radius: 3px;
 }
 
 .playlist-name {
   color: #fff;
-  font-size: 11px;
+  font-size: clamp(11px, 1vw, 1rem);
   font-weight: bold;
   margin: 0;
-  white-space: nowrap;
 }

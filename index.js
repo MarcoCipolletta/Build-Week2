@@ -29,7 +29,7 @@ const getInfoCantante = function (idAlbum, index) {
       console.log(album);
 
       titolo = album.title;
-      img = album.cover_small;
+      img = album.cover_medium;
       let id = album.id;
       console.log(id);
 
