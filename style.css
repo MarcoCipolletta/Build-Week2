@@ -597,43 +597,47 @@ main .album-info-wrap .album-info span {
   font-size: 12px;
   color: white;
 }
-main .album-info-wrap .album-info p {
+main .album-info-wrap .album-info p .nav-album {
+  height: 60px;
+}
+main .album-info-wrap .album-info p .hero-album {
+  height: 480px;
+}
+main .album-info-wrap .album-info p .song-container {
+  background-color: rgba(0, 0, 0, 0.266);
+  width: 100%;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
   color: white;
   display: flex;
   align-items: center;
   gap: 3px;
 }
-
-.bold {
+main .bold {
   font-weight: 600;
 }
-
-.thin {
+main .thin {
   font-weight: 400;
 }
-
-main::-webkit-scrollbar {
+main main::-webkit-scrollbar {
   width: 10px;
 }
-
-main::-webkit-scrollbar-track {
+main main::-webkit-scrollbar-track {
   background-color: transparent;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
-
-main::-webkit-scrollbar-thumb {
+main main::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.0862745098);
   border-radius: 10px;
 }
-
-.album-cta {
+main .album-cta {
   padding: 16px 20px;
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.album-cta .play-wrap {
+main .album-cta .play-wrap {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -642,53 +646,48 @@ main::-webkit-scrollbar-thumb {
   justify-content: center;
   background-color: #1ed760;
 }
-.album-cta .play-wrap .play {
+main .album-cta .play-wrap .play {
   color: black;
   font-size: 24px;
   margin-left: 2px;
 }
-.album-cta ion-icon {
+main .album-cta ion-icon {
   font-size: 32px;
 }
-
-.table-wrap {
+main .table-wrap {
   padding-inline: 20px;
 }
-.table-wrap table {
+main .table-wrap table {
   width: 100%;
   font-size: 13px;
 }
-.table-wrap table td {
+main .table-wrap table td {
   padding-top: 16px;
   vertical-align: middle;
 }
-.table-wrap table p {
+main .table-wrap table p {
   margin-bottom: 6px;
 }
-.table-wrap table .clock {
+main .table-wrap table .clock {
   font-size: 15px;
 }
-.table-wrap table th {
+main .table-wrap table th {
   font-weight: 400;
   padding-bottom: 6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.121);
   vertical-align: middle;
 }
-
-.l {
+main .l {
   text-align: left;
 }
-
-.r {
+main .r {
   text-align: right;
   padding-right: 20%;
 }
-
-.c {
+main .c {
   text-align: center;
 }
-
-.text-white {
+main .text-white {
   color: white;
 }
 
