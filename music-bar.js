@@ -20,9 +20,17 @@ if (volumeAudio) {
   updateSliderBackground2(regolaVolume);
 }
 
+let canzoneAvviata = localStorage.getItem("durataCanzone");
+
 let isplaying = false;
 
 barMusicinfo();
+
+if (canzoneAvviata) {
+  barradurata.value = canzoneAvviata;
+  audio.currentTime = (barradurata.value / 100) * localStorage.getItem("audioDuration");
+}
+updateSliderBackground(barradurata);
 
 const playStop = function () {
   if (isplaying) {
@@ -86,8 +94,6 @@ function updateSliderBackground(slider) {
   slider.style.background = `linear-gradient(to right, #1ed760 ${value}%, #404040 ${value}%)`;
 }
 
-updateSliderBackground(barradurata);
-
 // Aggiungi gli event listener solo una volta
 barradurata.addEventListener("input", function () {
   // L'utente sta cercando di cambiare la posizione della canzone, aggiornando manualmente la barra
@@ -106,7 +112,15 @@ barradurata.addEventListener("mouseleave", function () {
 // Evento che aggiorna la barra del progresso durante la riproduzione della canzone
 audio.addEventListener("timeupdate", function () {
   const durataTotale = (audio.currentTime / audio.duration) * 100;
-  barradurata.value = durataTotale;
+
+  if (isNaN(durataTotale)) {
+    barradurata.value = 0;
+    console.log("siamo dentro l if", durataTotale);
+  } else {
+    barradurata.value = durataTotale;
+    localStorage.setItem("durataCanzone", barradurata.value);
+    localStorage.setItem("audioDuration", audio.duration);
+  }
   currentTime.innerText = convertSeconds(audio.currentTime);
 
   // Aggiorna lo sfondo della barra in base al progresso attuale della canzone
