@@ -1,6 +1,8 @@
-let id = new URLSearchParams(location.search).get("id");
-const getInfoArtist = function (id) {
-  let apiAlbum = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`;
+let albumId = new URLSearchParams(location.search).get("id");
+
+const getArtistFromAlbum = function (albumId) {
+  let apiAlbum = `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`;
+
   fetch(apiAlbum)
     .then((response) => {
       if (response.ok) {
@@ -11,14 +13,43 @@ const getInfoArtist = function (id) {
     })
     .then((album) => {
       console.log("info album", album);
-      let songArray = album.tracks.data;
-      console.log(songArray);
-      let title = document.getElementById("artistTitle");
-      title.innerText = album.artist.name;
-      console.log(title);
+
+      if (album.artist && album.artist.id) {
+        let artistId = album.artist.id;
+
+        getInfoArtist(artistId);
+      } else {
+        console.error("ID dell'artista non trovato nell'album");
+      }
     })
     .catch((error) => {
       console.log("errore", error);
     });
 };
-getInfoArtist(id);
+
+const getInfoArtist = function (artistId) {
+  let apiArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`;
+
+  fetch(apiArtist)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("LA RISPOSTA DEL SERVER NON è OK");
+      }
+    })
+    .then((artist) => {
+      console.log("info artista", artist);
+
+      let title = document.getElementById("artistTitle");
+      title.innerText = artist.name;
+
+      let fanCount = document.getElementById("fanCount");
+      fanCount.innerText = ` ${artist.nb_fan} ascoltatori mensili`;
+    })
+    .catch((error) => {
+      console.log("errore", error);
+    });
+};
+
+getArtistFromAlbum(albumId);

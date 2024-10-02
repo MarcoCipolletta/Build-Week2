@@ -50,7 +50,7 @@ const getInfoAlbum = function (id) {
 getInfoAlbum(id);
 let artistName = document.getElementById("artistName");
 artistName.addEventListener("click", function () {
-  window.location.href = `./artist.html?id=${id} `;
+  window.location.href = `./artist.html?id=${id}`;
 });
 
 function convertSeconds(seconds) {
