@@ -37,6 +37,9 @@ main {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      .d-none {
+        display: none;
+      }
       img {
         width: 20px;
         height: 20px;
@@ -147,4 +150,56 @@ main::-webkit-scrollbar-thumb {
 }
 .text-white {
   color: white;
+}
+
+@media screen and (max-width: 576px) {
+  main .album-info-wrap {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .album-info {
+      padding-left: 20px;
+      align-self: start;
+      .album-mobile {
+        color: #979797c9;
+        display: block;
+      }
+      #year {
+        position: absolute;
+        bottom: 16px;
+        left: 73px;
+        color: #979797c9;
+      }
+    }
+  }
+  .album-cta {
+    position: relative;
+    .play-wrap {
+      position: absolute;
+      right: 14px;
+    }
+    .shuffle {
+      position: absolute;
+      right: 70px;
+      display: block;
+    }
+  }
+  table {
+    .c {
+      display: none;
+    }
+    .r {
+      display: none;
+    }
+    tr {
+      position: relative;
+      &::after {
+        content: "⁝";
+        font-size: 28px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }

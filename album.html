@@ -16,7 +16,7 @@
         <ul>
           <li class="d-flex align-center cursor-pointer"><ion-icon class="padding-ion-icon font-icon-menu" name="ellipsis-horizontal-sharp"></ion-icon></li>
           <li class="d-flex align-center cursor-pointer">
-            <a href="./index.html"><ion-icon class="padding-ion-icon font-icon-menu" name="home-sharp"></ion-icon>Home</a>
+            <a href="/index.html"><ion-icon class="padding-ion-icon font-icon-menu" name="home-sharp"></ion-icon>Home</a>
           </li>
           <li class="d-flex align-center cursor-pointer"><ion-icon class="padding-ion-icon font-icon-menu" name="search-sharp"></ion-icon>Cerca</li>
           <li class="d-flex align-center cursor-pointer"><ion-icon class="padding-ion-icon font-icon-menu" name="albums-sharp"></ion-icon>La tua libreria</li>
@@ -57,25 +57,27 @@
           <img src="" id="album-image" />
           <canvas id="canvas" style="display: none"></canvas>
           <div class="album-info">
-            <span class="bold">ALBUM</span>
+            <span class="bold d-none-mobile">ALBUM</span>
             <h1 id="title"></h1>
             <p>
               <img src="./assets/imgs/main/image-14.jpg" id="iconImage" />
               <span class="bold cursor-pointer" id="artistName"></span>
-              &bull;
+              <span class="d-none-mobile">&bull;</span>
               <span id="year">2017</span>
-              &bull;
-              <span class="bold" id="numTracks">12 brani</span>
-              ,
+              <span class="d-none-mobile">&bull;</span>
+              <span class="bold d-none-mobile" id="numTracks">12 brani</span>
+              <span class="d-none-mobile">,</span>
               <span class="thin">
-                <span id="totDuration">53 min</span>
+                <span class="d-none-mobile" id="totDuration">53 min</span>
               </span>
             </p>
+            <p class="album-mobile d-none">ALBUM &bull;</p>
           </div>
         </div>
 
         <div class="song-container">
           <div class="album-cta">
+            <ion-icon class="shuffle d-none" name="shuffle"></ion-icon>
             <div class="play-wrap">
               <ion-icon name="play" class="play"></ion-icon>
             </div>

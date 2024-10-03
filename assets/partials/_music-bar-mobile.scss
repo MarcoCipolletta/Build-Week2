@@ -5,7 +5,7 @@
   right: 0;
   z-index: 1000;
   padding-block: 0.7rem;
-  background-color: rgba(0, 0, 0, 0.534);
+  background-color: rgb(0 0 0 / 84%);
   display: none;
 }
 .container-icon-mobile-nav {
@@ -28,6 +28,7 @@
   }
   .container-music-bar {
     bottom: 61px;
+    background-color: #272727;
   }
   .d-none-mobile {
     display: none;
