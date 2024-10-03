@@ -47,3 +47,18 @@
 .card:nth-child(5) {
   font-size: 1rem;
 }
+
+@media screen and (max-width: 576px) {
+  .card-container{
+    .card {
+      width: 100%;
+      display: flex;
+
+      .card-cover{
+        width: 60%;
+      }
+    }
+  }
+
+
+  }
