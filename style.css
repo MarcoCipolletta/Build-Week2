@@ -624,6 +624,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-bottom: 70px;
 }
 .other-likes-section .card {
   background-color: #282828;
@@ -707,10 +708,10 @@ main {
     font-size: 16px;
   }
   .card-container .card .cardFooter .icon-wrap .heartGreen {
-    color: #1CD760;
+    color: #1cd760;
   }
   .card-container .card .cardFooter .icon-wrap span {
-    background-color: #1C1C1C;
+    background-color: #1c1c1c;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -909,16 +910,16 @@ main::-webkit-scrollbar-thumb {
     right: 70px;
     display: block;
   }
-  table .c {
+  .song-container table .c {
     display: none;
   }
-  table .r {
+  .song-container table .r {
     display: none;
   }
-  table tr {
+  .song-container table tr {
     position: relative;
   }
-  table tr::after {
+  .song-container table tr::after {
     content: "⁝";
     font-size: 28px;
     position: absolute;
@@ -1009,30 +1010,33 @@ main::-webkit-scrollbar-thumb {
   margin-right: 130px;
 }
 .general-container table {
-  margin-block: 20px;
   width: 113%;
 }
 .general-container table tr {
-  display: flex;
-  align-items: center;
   margin-block: 10px;
   font-size: 15px;
 }
 .general-container table .number {
   font-size: 14px;
   padding-left: 25px;
+  vertical-align: middle;
+  padding-block: 17px;
 }
 .general-container table .artist-img {
   padding-inline: 10px;
+  vertical-align: middle;
 }
 .general-container table .song {
-  width: 50%;
+  vertical-align: middle;
 }
 .general-container table .riproduzioni {
   padding-inline: 80px;
+  vertical-align: middle;
+  text-align: center;
 }
 .general-container table .durata {
   text-align: end;
+  vertical-align: middle;
 }
 
 #altro {
@@ -1043,6 +1047,57 @@ main::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
+@media screen and (max-width: 576px) {
+  .main-artist {
+    padding-bottom: 150px;
+  }
+  .general-container {
+    flex-direction: column-reverse;
+  }
+  .info-artist {
+    position: relative;
+  }
+  .info-artist span.d-none-mobile {
+    display: none;
+  }
+  .info-artist #artistTitle {
+    font-size: clamp(55px, 4vw, 4rem);
+    position: absolute;
+    top: 157px;
+  }
+  .info-artist #fanCount {
+    position: absolute;
+    top: 244px;
+    color: #b3b3b3;
+  }
+  .popolari table {
+    width: 100%;
+  }
+  .popolari table tr {
+    position: relative;
+  }
+  .popolari table tr::after {
+    content: "⁝";
+    font-size: 28px;
+    position: absolute;
+    top: 15px;
+    transform: translateY(-50%);
+    right: -93px;
+  }
+  .popolari table tr .riproduzioni {
+    font-size: 12px;
+    display: none;
+  }
+  .popolari table tr .durata {
+    display: none;
+  }
+  .popolari table tr .song p {
+    width: 104%;
+  }
+  .popolari table tr .song p + p {
+    display: block;
+  }
+}
 .mobile-nav {
   position: fixed;
   bottom: 0;

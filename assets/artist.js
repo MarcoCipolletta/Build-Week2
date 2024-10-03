@@ -72,7 +72,7 @@ const getInfoArtist = function (artistId) {
         .then((trackList) => {
           const heroArtist = document.querySelector(".hero-artist");
           heroArtist.style.backgroundImage = `url(${artist.picture_xl})`;
-          heroArtist.style.backgroundPosition = '0 20%';
+          heroArtist.style.backgroundPosition = "0 20%";
           console.log(trackList);
           let title = document.getElementById("artistTitle");
           title.innerText = artist.name;
@@ -80,14 +80,18 @@ const getInfoArtist = function (artistId) {
           let fanCount = document.getElementById("fanCount");
           fanCount.innerText = ` ${artist.nb_fan} ascoltatori mensili`;
 
-          for (let i = 0; i < 6; i++) {
+          for (let i = 0; i < trackList.data.length; i++) {
             let newRow = document.createElement("tr");
+            if (i >= 6) {
+              newRow.classList.add("d-none");
+            }
             newRow.innerHTML = `<td class="number">${i + 1}</td>
                     <td class="artist-img">
                     <img src= ${trackList.data[i].album.cover_small} width="35px" />
                     </td>
                     <td class="song">
                     <p onclick="playMusic(${i})" class="bold cursor-pointer text-white"> ${trackList.data[i].title}</p>
+                    <p class='d-none'>${trackList.data[i].rank}</p>
                   </td>
                   <td class="riproduzioni">${trackList.data[i].rank}</td>
                                     <td class="durata widthTD">${convertSeconds(trackList.data[i].duration)}</td>
@@ -97,22 +101,6 @@ const getInfoArtist = function (artistId) {
             arrayOggArtista.push(trackList.data[i]);
           }
 
-          for (let i = 6; i < trackList.data.length; i++) {
-            let newRow = document.createElement("tr");
-            newRow.innerHTML = `<td class="number">${i + 1}</td>
-                    <td class="artist-img">
-                    <img src= ${trackList.data[i].album.cover_small} width="35px" />
-                    </td>
-                    <td class="song">
-                    <p onclick="playMusic(${i})" class="bold cursor-pointer text-white"> ${trackList.data[i].title}</p>
-                  </td>
-                  <td class="riproduzioni">${trackList.data[i].rank}</td>
-                                    <td class="durata widthTD">${convertSeconds(trackList.data[i].duration)}</td>
-                  `;
-
-            table2.appendChild(newRow);
-            arrayOggArtista.push(trackList.data[i]);
-          }
           let roundedImage = document.querySelector(".roundedImg");
           roundedImage.src = artist.picture_small;
           let infoNameArtist = document.getElementById("info");
@@ -120,6 +108,28 @@ const getInfoArtist = function (artistId) {
 
           main.classList.add("d-block");
           spinner.classList.add("d-none");
+          let trDisplayNone = document.querySelectorAll("tr.d-none");
+          console.log(trDisplayNone);
+
+          let tableAperta = true;
+
+          buttonAltro.addEventListener("click", function () {
+            if (tableAperta) {
+              trDisplayNone.forEach((tr) => {
+                tr.classList.remove("d-none");
+              });
+
+              buttonAltro.innerText = "NASCONDI";
+              tableAperta = false;
+            } else {
+              trDisplayNone.forEach((tr) => {
+                tr.classList.add("d-none");
+              });
+
+              buttonAltro.innerText = "VISUALIZZA ALTRO";
+              tableAperta = true;
+            }
+          });
         });
     })
     .catch((error) => {
@@ -159,23 +169,3 @@ function convertMinutes(seconds) {
   const remainingMinutes = minutes % 60;
   return `${hours} ora ${remainingMinutes} min`;
 }
-
-let tableAperta = false;
-
-buttonAltro.addEventListener("click", function () {
-  if (tableAperta) {
-    table2.classList.remove("d-block");
-
-    table.style.marginBottom = "initial";
-    table2.style.marginTop = "initial";
-    buttonAltro.innerText = "VISUALIZZA ALTRO";
-    tableAperta = false;
-  } else {
-    table2.classList.add("d-block");
-
-    table.style.marginBottom = 0;
-    table2.style.marginTop = "-10px";
-    buttonAltro.innerText = "NASCONDI";
-    tableAperta = true;
-  }
-});

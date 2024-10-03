@@ -78,29 +78,32 @@
     margin-right: 130px;
   }
   table {
-    margin-block: 20px;
     width: 113%;
     tr {
-      display: flex;
-      align-items: center;
       margin-block: 10px;
       font-size: 15px;
     }
     .number {
       font-size: 14px;
       padding-left: 25px;
+      vertical-align: middle;
+      padding-block: 17px;
     }
     .artist-img {
       padding-inline: 10px;
+      vertical-align: middle;
     }
     .song {
-      width: 50%;
+      vertical-align: middle;
     }
     .riproduzioni {
       padding-inline: 80px;
+      vertical-align: middle;
+      text-align: center;
     }
     .durata {
       text-align: end;
+      vertical-align: middle;
     }
   }
 }
@@ -110,4 +113,60 @@
   color: #ffffffab;
   font-weight: bold;
   cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+  .main-artist {
+    padding-bottom: 150px;
+  }
+  .general-container {
+    flex-direction: column-reverse;
+  }
+  .info-artist {
+    position: relative;
+    span.d-none-mobile {
+      display: none;
+    }
+    #artistTitle {
+      font-size: clamp(55px, 4vw, 4rem);
+      position: absolute;
+      top: 157px;
+    }
+    #fanCount {
+      position: absolute;
+      top: 244px;
+      color: #b3b3b3;
+    }
+  }
+  .popolari {
+    table {
+      width: 100%;
+      tr {
+        position: relative;
+        &::after {
+          content: "⁝";
+          font-size: 28px;
+          position: absolute;
+          top: 15px;
+          transform: translateY(-50%);
+          right: -93px;
+        }
+        .riproduzioni {
+          font-size: 12px;
+          display: none;
+        }
+        .durata {
+          display: none;
+        }
+        .song {
+          p {
+            width: 104%;
+          }
+          p + p {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }

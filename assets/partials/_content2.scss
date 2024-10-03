@@ -12,6 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom: 70px;
   }
 
   .card {
@@ -47,67 +48,67 @@
 .card:nth-child(5) {
   font-size: 1rem;
 }
-.cardFooter{
+.cardFooter {
   display: none;
 }
 
 @media screen and (max-width: 576px) {
-  .card-container{
+  .card-container {
     row-gap: 20px;
     .card {
       width: 100%;
 
-      .card-title{
+      .card-title {
         font-size: 24px;
       }
 
-      .cardHeader{
+      .cardHeader {
         display: flex;
         flex-direction: row;
         column-gap: 15px;
       }
-      .cardDescription{
+      .cardDescription {
         display: flex;
         flex-direction: column-reverse;
         justify-content: flex-end;
         gap: 8px;
-        p{
+        p {
           font-size: 16px;
         }
       }
 
-      .icon-wrap{
+      .icon-wrap {
         margin-bottom: 0;
       }
-      .card-cover{
+      .card-cover {
         width: 50%;
         box-shadow: 0px 0px 9px #ffffff2b;
       }
 
-      .cardFooter{
+      .cardFooter {
         display: block;
-        .icon-wrap{
-          ion-icon{
+        .icon-wrap {
+          ion-icon {
             font-size: 32px;
           }
-          p{
+          p {
             display: flex;
             align-items: center;
             column-gap: 16px;
             font-size: 16px;
           }
-          .heartGreen{
-            color: #1CD760 ;
+          .heartGreen {
+            color: #1cd760;
           }
-          span{
-            background-color: #1C1C1C;
+          span {
+            background-color: #1c1c1c;
             border-radius: 50%;
             width: 40px;
             height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
-            ion-icon{
+            ion-icon {
               font-size: 24px;
             }
           }
@@ -115,6 +116,4 @@
       }
     }
   }
-
-
-  }
+}

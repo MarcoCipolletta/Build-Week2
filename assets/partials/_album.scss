@@ -184,21 +184,23 @@ main::-webkit-scrollbar-thumb {
       display: block;
     }
   }
-  table {
-    .c {
-      display: none;
-    }
-    .r {
-      display: none;
-    }
-    tr {
-      position: relative;
-      &::after {
-        content: "⁝";
-        font-size: 28px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+  .song-container {
+    table {
+      .c {
+        display: none;
+      }
+      .r {
+        display: none;
+      }
+      tr {
+        position: relative;
+        &::after {
+          content: "⁝";
+          font-size: 28px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
     }
   }
