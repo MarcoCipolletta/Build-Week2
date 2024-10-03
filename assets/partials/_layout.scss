@@ -358,3 +358,15 @@ main {
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 576px) {
+.aside-end{
+  display: none;
+}
+.aside-start{
+  display: none;
+}
+.select{
+  display: none;
+}
+}

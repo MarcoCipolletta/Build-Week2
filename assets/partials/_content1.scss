@@ -5,7 +5,6 @@
 .title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 15px;
 }
 .playlist {
   display: flex;
@@ -39,3 +38,46 @@
   margin-inline: 14px;
   line-height: 1.2em;
 }
+.icon-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.icons{
+  display: none;
+}
+.tab-bar{
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .playlist {
+    gap: 12px;
+  }
+  .playlist-card {
+    flex: 1 1 calc(50% - 12px);
+  }
+  .icons{
+    display: flex;
+    column-gap: 8px;
+    ion-icon{
+      color:#fff;
+      font-size: 20px;
+
+    }
+  }
+  .tab-bar{
+    padding-block: 16px;
+    display: flex;
+    column-gap: 12px;
+    button{
+      background-color: transparent;
+      color: #fff;
+      border: 0;
+      font-size: 16px;
+      padding-inline: 12px;
+    }
+  }
+
+  }

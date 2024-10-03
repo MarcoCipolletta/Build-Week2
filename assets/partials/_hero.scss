@@ -96,3 +96,9 @@
   font-weight: 700;
   color: white;
 }
+
+@media screen and (max-width: 576px) {
+  .hero{
+    display: none;
+  }
+  }
