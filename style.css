@@ -852,4 +852,74 @@ main::-webkit-scrollbar-thumb {
   color: rgba(255, 255, 255, 0.6705882353);
   font-weight: bold;
   cursor: pointer;
+}
+
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-block: 0.7rem;
+  background-color: rgba(0, 0, 0, 0.534);
+  display: none;
+}
+
+.container-icon-mobile-nav {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  color: #b3b3b3;
+}
+.container-icon-mobile-nav a {
+  text-decoration: none;
+  color: #b3b3b3;
+}
+.container-icon-mobile-nav p {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+  .mobile-nav {
+    display: block;
+  }
+  .container-music-bar {
+    bottom: 61px;
+  }
+  .d-none-mobile {
+    display: none;
+  }
+  .radio-mobile {
+    position: absolute;
+    right: 109px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .heart-mobile {
+    position: absolute;
+    right: 65px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .heart-mobile ion-icon {
+    font-size: 22px;
+  }
+  #avvio-pausa {
+    position: absolute;
+    right: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .container-music-bar {
+    width: 93%;
+    border-radius: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #img-bar-music {
+    border-radius: 7px;
+  }
+  #titolo-canzone-bar-music {
+    padding-bottom: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
