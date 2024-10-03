@@ -389,7 +389,7 @@ main {
     transform: rotate(360deg);
   }
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1000px) {
   .aside-end {
     display: none;
   }
@@ -506,7 +506,7 @@ main {
   color: white;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1000px) {
   .hero {
     display: none;
   }
@@ -570,7 +570,7 @@ main {
   display: none;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1000px) {
   .playlist {
     gap: 12px;
   }
@@ -662,7 +662,7 @@ main {
   display: none;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1000px) {
   .card-container {
     row-gap: 20px;
   }
@@ -878,7 +878,7 @@ main::-webkit-scrollbar-thumb {
   color: white;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1199px) {
   main .album-info-wrap {
     flex-direction: column;
     align-items: center;
@@ -1047,7 +1047,7 @@ main::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1199px) {
   .main-artist {
     padding-bottom: 150px;
   }
@@ -1119,7 +1119,7 @@ main::-webkit-scrollbar-thumb {
   font-size: 1rem;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1000px) {
   .mobile-nav {
     display: block;
   }

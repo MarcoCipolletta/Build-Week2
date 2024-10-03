@@ -359,14 +359,14 @@ main {
   }
 }
 
-@media screen and (max-width: 576px) {
-.aside-end{
-  display: none;
-}
-.aside-start{
-  display: none;
-}
-.select{
-  display: none;
-}
+@media screen and (max-width: 1000px) {
+  .aside-end {
+    display: none;
+  }
+  .aside-start {
+    display: none;
+  }
+  .select {
+    display: none;
+  }
 }

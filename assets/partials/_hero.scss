@@ -15,7 +15,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 .select select {
   width: 10em;
@@ -97,8 +96,8 @@
   color: white;
 }
 
-@media screen and (max-width: 576px) {
-  .hero{
+@media screen and (max-width: 1000px) {
+  .hero {
     display: none;
   }
-  }
+}

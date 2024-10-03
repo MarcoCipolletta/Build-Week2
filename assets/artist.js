@@ -14,6 +14,9 @@ const barMusicinfo = function () {
     imgBarMusic.src = oggArtistaStorage.imgAlbum;
     titoloCanzoneBarMusic.innerText = oggArtistaStorage.titolo;
     nomeArtistaBarMusic.innerHTML = oggArtistaStorage.nomeArtista;
+    nomeArtistaBarMusic.addEventListener("click", function () {
+      window.location.href = `./artist.html?id=${oggArtistaStorage.idArtista}`;
+    });
   } else {
     audio.src = "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3";
   }
@@ -144,7 +147,7 @@ const playMusic = function (i) {
     titolo: arrayOggArtista[i].title_short,
     imgAlbum: arrayOggArtista[i].album.cover_small,
     nomeArtista: arrayOggArtista[i].artist.name,
-    idArtista: arrayOggArtista[i].artist.id,
+    idArtista: arrayOggArtista[i].album.id,
     preview: arrayOggArtista[i].preview,
   };
 

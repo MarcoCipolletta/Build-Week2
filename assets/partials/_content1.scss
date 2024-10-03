@@ -38,27 +38,27 @@
   margin-inline: 14px;
   line-height: 1.2em;
 }
-.icon-wrap{
+.icon-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
 }
-.icons{
+.icons {
   display: none;
 }
-.tab-bar{
+.tab-bar {
   display: none;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1000px) {
   .playlist {
     gap: 12px;
   }
-  .playlist-cover{
-    width:30%;
+  .playlist-cover {
+    width: 30%;
   }
-  .playlist-name{
+  .playlist-name {
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -69,20 +69,19 @@
   .playlist-card {
     flex: 1 1 calc(50% - 12px);
   }
-  .icons{
+  .icons {
     display: flex;
     column-gap: 8px;
-    ion-icon{
-      color:#fff;
+    ion-icon {
+      color: #fff;
       font-size: 32px;
-
     }
   }
-  .tab-bar{
+  .tab-bar {
     padding-block: 16px;
     display: flex;
     column-gap: 12px;
-    button{
+    button {
       background-color: transparent;
       color: #fff;
       border: 0;
@@ -90,5 +89,4 @@
       padding-inline: 12px;
     }
   }
-
-  }
+}
