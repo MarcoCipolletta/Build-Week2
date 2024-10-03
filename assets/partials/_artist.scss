@@ -123,19 +123,11 @@
     flex-direction: column-reverse;
   }
   .info-artist {
-    position: relative;
     span.d-none-mobile {
       display: none;
     }
     #artistTitle {
       font-size: clamp(55px, 4vw, 4rem);
-      position: absolute;
-      top: 157px;
-    }
-    #fanCount {
-      position: absolute;
-      top: 244px;
-      color: #b3b3b3;
     }
   }
   .popolari {
@@ -161,6 +153,12 @@
         .song {
           p {
             width: 104%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
           }
           p + p {
             display: block;

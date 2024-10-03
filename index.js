@@ -63,7 +63,7 @@ getInfoCantante("11375450", 3); //11375450
 
 getInfoCantante("74434962", 4); //74434962
 
-getInfoCantante("523909312", 5); //523909312
+getInfoCantante("523974", 5); //523909312
 
 let buttonPlay = document.querySelector(".play");
 

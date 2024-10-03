@@ -1054,21 +1054,11 @@ main::-webkit-scrollbar-thumb {
   .general-container {
     flex-direction: column-reverse;
   }
-  .info-artist {
-    position: relative;
-  }
   .info-artist span.d-none-mobile {
     display: none;
   }
   .info-artist #artistTitle {
     font-size: clamp(55px, 4vw, 4rem);
-    position: absolute;
-    top: 157px;
-  }
-  .info-artist #fanCount {
-    position: absolute;
-    top: 244px;
-    color: #b3b3b3;
   }
   .popolari table {
     width: 100%;
@@ -1093,6 +1083,12 @@ main::-webkit-scrollbar-thumb {
   }
   .popolari table tr .song p {
     width: 104%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .popolari table tr .song p + p {
     display: block;
