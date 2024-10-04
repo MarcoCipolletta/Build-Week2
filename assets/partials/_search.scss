@@ -1,0 +1,100 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: clamp(14px, 2vw, 3.5rem);
+    margin-block: 1rem;
+    align-self: start;
+    color: #fff;
+  }
+  form {
+    width: 70%;
+    display: flex;
+    background-color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 7px;
+    vertical-align: middle;
+    color: black;
+    ion-icon {
+      vertical-align: middle;
+      font-size: 20px;
+      padding-right: 5px;
+    }
+  }
+  #inputSearchBar {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    &::placeholder {
+      color: black;
+    }
+    &:focus-visible {
+      outline: none;
+      border: none;
+    }
+  }
+}
+.sfoglia {
+  h3 {
+    color: white;
+    margin-block: 1rem;
+  }
+  .col:nth-child(5n + 1) .cardSearch {
+    background-color: red;
+  }
+  .col:nth-child(5n + 2) .cardSearch {
+    background-color: orange;
+  }
+  .col:nth-child(5n + 3) .cardSearch {
+    background-color: green;
+  }
+  .col:nth-child(5n + 4) .cardSearch {
+    background-color: darkblue;
+  }
+  .col:nth-child(5n + 5) .cardSearch {
+    background-color: purple;
+  }
+  .cardSearch {
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    text-align: end;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+    h4 {
+      text-align: start;
+    }
+    img {
+      height: 140px;
+      margin-top: 12px;
+      border-radius: 15px;
+      transform: rotate(22deg) translate(38px);
+      box-shadow: -1px 1px 8px #00000073;
+    }
+  }
+}
+
+.ricerca {
+  ul {
+    li:hover {
+      background-color: #4e4e4eba;
+      border-radius: 5px;
+      & > div > div > p:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.pSearchBar {
+  height: 30.5px;
+}
+
+.barraMusicS {
+  height: 11.5px;
+}

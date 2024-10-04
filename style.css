@@ -1163,4 +1163,100 @@ main::-webkit-scrollbar-thumb {
   #titolo-canzone-bar-music {
     padding-bottom: 0;
   }
+}
+.searchBar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.searchBar h1 {
+  font-size: clamp(14px, 2vw, 3.5rem);
+  margin-block: 1rem;
+  align-self: start;
+  color: #fff;
+}
+.searchBar form {
+  width: 70%;
+  display: flex;
+  background-color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 7px;
+  vertical-align: middle;
+  color: black;
+}
+.searchBar form ion-icon {
+  vertical-align: middle;
+  font-size: 20px;
+  padding-right: 5px;
+}
+.searchBar #inputSearchBar {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+.searchBar #inputSearchBar::-moz-placeholder {
+  color: black;
+}
+.searchBar #inputSearchBar::placeholder {
+  color: black;
+}
+.searchBar #inputSearchBar:focus-visible {
+  outline: none;
+  border: none;
+}
+
+.sfoglia h3 {
+  color: white;
+  margin-block: 1rem;
+}
+.sfoglia .col:nth-child(5n+1) .cardSearch {
+  background-color: red;
+}
+.sfoglia .col:nth-child(5n+2) .cardSearch {
+  background-color: orange;
+}
+.sfoglia .col:nth-child(5n+3) .cardSearch {
+  background-color: green;
+}
+.sfoglia .col:nth-child(5n+4) .cardSearch {
+  background-color: darkblue;
+}
+.sfoglia .col:nth-child(5n+5) .cardSearch {
+  background-color: purple;
+}
+.sfoglia .cardSearch {
+  width: 100%;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: end;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.sfoglia .cardSearch h4 {
+  text-align: start;
+}
+.sfoglia .cardSearch img {
+  height: 140px;
+  margin-top: 12px;
+  border-radius: 15px;
+  transform: rotate(22deg) translate(38px);
+  box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4509803922);
+}
+
+.ricerca ul li:hover {
+  background-color: rgba(78, 78, 78, 0.7294117647);
+  border-radius: 5px;
+}
+.ricerca ul li:hover > div > div > p:hover {
+  text-decoration: underline;
+}
+
+.pSearchBar {
+  height: 30.5px;
+}
+
+.barraMusicS {
+  height: 11.5px;
 }/*# sourceMappingURL=style.css.map */
