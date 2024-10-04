@@ -49,7 +49,7 @@ inputSearchBar.addEventListener(
           ogg.data.forEach((song) => {
             let durata = convertSecondsSearch(song.duration);
             const li = document.createElement("li");
-            li.classList.add("d-flex", "justify-content-between", "w-75", "align-items-center", "mb-3", "p-2");
+            li.classList.add("d-flex", "justify-content-between", "w-100", "align-items-center", "mb-3", "p-2");
             li.innerHTML = `
         <div>
               <img src="${song.album.cover_xl}" width="45px" />

@@ -1176,7 +1176,7 @@ main::-webkit-scrollbar-thumb {
   color: #fff;
 }
 .searchBar form {
-  width: 70%;
+  width: 100%;
   display: flex;
   background-color: white;
   padding: 0.5rem 0.75rem;
