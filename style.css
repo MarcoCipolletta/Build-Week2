@@ -400,6 +400,15 @@ main {
     display: none;
   }
 }
+.playList-container {
+  height: 60%;
+  overflow-y: auto;
+  width: 110%;
+}
+.playList-container::-webkit-scrollbar {
+  display: none;
+}
+
 .select {
   justify-content: space-between;
   padding-block: 1em;

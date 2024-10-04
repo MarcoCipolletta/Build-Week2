@@ -370,3 +370,12 @@ main {
     display: none;
   }
 }
+
+.playList-container {
+  height: 60%;
+  overflow-y: auto;
+  width: 110%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
