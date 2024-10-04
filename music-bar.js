@@ -9,6 +9,7 @@ let duration = document.getElementById("duration");
 let imgBarMusic = document.getElementById("img-bar-music");
 let titoloCanzoneBarMusic = document.getElementById("titolo-canzone-bar-music");
 let nomeArtistaBarMusic = document.getElementById("nome-artista-bar-music");
+let buttonVolume = document.getElementById("volume");
 
 let audio = new Audio();
 
@@ -73,6 +74,12 @@ buttonRestart.addEventListener("click", function () {
 regolaVolume.addEventListener("input", function () {
   audio.volume = regolaVolume.value;
   localStorage.setItem("volume", regolaVolume.value);
+  localStorage.setItem("ultmiValore", regolaVolume.value);
+  if (audio.volume === 0) {
+    buttonVolume.innerHTML = `<ion-icon name="volume-mute-sharp"></ion-icon>`;
+  } else {
+    buttonVolume.innerHTML = ` <ion-icon name="volume-high-sharp"></ion-icon>`;
+  }
 });
 
 function updateSliderBackground2(slider) {
@@ -146,3 +153,41 @@ function convertSeconds(seconds) {
   const remainingSeconds = Math.floor(seconds % 60);
   return `${minutes} : ${remainingSeconds}`;
 }
+
+let volumeMute = false;
+
+if (localStorage.getItem("volumeTruefalse")) {
+  if (localStorage.getItem("volumeTruefalse") === "true") {
+    audio.volume = 0;
+    regolaVolume.value = 0;
+    updateSliderBackground2(regolaVolume);
+    buttonVolume.innerHTML = `<ion-icon name="volume-mute-sharp"></ion-icon>`;
+    volumeMute = true;
+  } else {
+    audio.volume = volumeAudio;
+    regolaVolume.value = volumeAudio;
+    updateSliderBackground2(regolaVolume);
+    buttonVolume.innerHTML = ` <ion-icon name="volume-high-sharp"></ion-icon>`;
+    volumeMute = false;
+  }
+}
+
+buttonVolume.addEventListener("click", function () {
+  if (volumeMute) {
+    audio.volume = localStorage.getItem("ultmiValore");
+    regolaVolume.value = localStorage.getItem("ultmiValore");
+    updateSliderBackground2(regolaVolume);
+    buttonVolume.innerHTML = ` <ion-icon name="volume-high-sharp"></ion-icon>`;
+    volumeMute = false;
+    localStorage.setItem("volume", regolaVolume.value);
+    localStorage.setItem("volumeTruefalse", volumeMute);
+  } else {
+    audio.volume = 0;
+    regolaVolume.value = 0;
+    updateSliderBackground2(regolaVolume);
+    buttonVolume.innerHTML = `<ion-icon name="volume-mute-sharp"></ion-icon>`;
+    volumeMute = true;
+    localStorage.setItem("volume", regolaVolume.value);
+    localStorage.setItem("volumeTruefalse", volumeMute);
+  }
+});
